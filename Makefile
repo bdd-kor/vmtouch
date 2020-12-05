@@ -5,7 +5,15 @@ MANDIR?=	$(PREFIX)/share/man/man8
 CC?=		cc
 CFLAGS+=	-Wall -O2 -g -std=c99
 
-all: vmtouch vmtouch.8
+all: vmtouch vmtouch.8 test
+
+CC=gcc
+
+test: test.c
+	$(CC) -o $@ $<
+	
+vmtouch: vmtouch.c
+	$(CC) -o$@  $<
 
 .PHONY: all install clean uninstall
 
