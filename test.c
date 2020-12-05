@@ -15,6 +15,8 @@ int main() {
 
     printf("select number : ");
     scanf("%d", &choice);
+        while (choice == 1 || 2 || 3) {
+
     printf("\n");
     if (choice == 1) {
         printf("Enter the path to the file you want to test(example : c:\\test\\test.c) : ");
@@ -75,6 +77,7 @@ int main() {
         return 0;
     }
     else printf("ERROR!!! Please restart this program and enter the correct number.\n");
-    printf("select number : ");
-    scanf("%d", &choice);
+        printf("select number : ");
+        scanf("%d", &choice);
+        }
 }
