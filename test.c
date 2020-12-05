@@ -35,6 +35,7 @@ int main() {
         printf("\nrunning time : %fsecond(s) \n", duration);
 
         fclose(in);
+        break;
     }
     else if (choice == 2) {
         printf("Enter the path to the file you want to test(example : c:\\test\\test.c) : ");
@@ -49,6 +50,7 @@ int main() {
             printf("%s", pLine);
         }
         fclose(in);
+        break;
     }
     else if (choice == 3) {
         printf("Enter the path to the file you want to test(example : c:\\test\\test.c) : ");
@@ -70,6 +72,9 @@ int main() {
         printf("\nrunning time : %fsecond(s) \n", duration);
 
         fclose(in);
+        break;
     }
     else printf("ERROR!!! Please restart this program and enter the correct number.\n");
+    printf("select number : ");
+    scanf("%d", &choice);
 }
