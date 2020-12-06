@@ -12,8 +12,6 @@ CC=gcc
 test: test.c
 	$(CC) -o $@ $<
 	
-vmtouch: vmtouch.c
-	$(CC) -o$@  $<
 
 .PHONY: all install clean uninstall
 
