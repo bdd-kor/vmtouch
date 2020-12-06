@@ -2,12 +2,18 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <time.h>
+#include <sys/time.h>
+#include <unsitd.h>
+
 int main() {
     char line[1024];
     char* pLine;
     char input[1000];
 
     int choice;
+     struct timeval start_time;
+    struct timeval end_time;
+    double execution_time;
     printf("Please enter the number\n\n");
     printf("1: file test program(It runs very fast if cached.)\n\n");
     printf("2: read file\n\n");
@@ -19,11 +25,10 @@ int main() {
 
     printf("\n");
     if (choice == 1) {
+        gettimeofday(&start_time, NULL);
         printf("Enter the path to the file you want to test(example : c:\\test\\test.c) : ");
         scanf("%s", input);
-        clock_t start, finish;
-        double duration;
-        start = clock();
+        
         FILE* in = fopen(input, "r");
         if (in == NULL) {
             printf("ERROR!!! Please restart this program and enter the correct path.\n");
@@ -32,10 +37,9 @@ int main() {
         while (!feof(in)) {
             pLine = fgets(line, 1024, in);
         }
-        finish = clock();
-        duration = (double)(finish - start) / CLOCKS_PER_SEC;
-        printf("\nrunning time : %fsecond(s) \n", duration);
-
+       gettimeofday(&end_time, NULL);
+            execution_time = (double)(end_time.tv_sec) + (double)(end_time.tv_usec) / 1000000.0 - (double)(start_time.tv_sec) - (double)(start_time.tv_usec) / 1000000.0;
+        printf("\nrunning time : %fsecond(s) \n", execution_time);
         fclose(in);
         return 0;
     }
@@ -55,12 +59,12 @@ int main() {
         return 0;
     }
     else if (choice == 3) {
+        gettimeofday(&start_time, NULL);
         printf("Enter the path to the file you want to test(example : c:\\test\\test.c) : ");
         scanf("%s", input);
-        clock_t start, finish;
-        double duration;
-        start = clock();
         FILE* in = fopen(input, "r");
+        
+        
         if (in == NULL) {
             printf("ERROR!!! Please restart this program and enter the correct path.\n");
             return 1;
@@ -69,9 +73,9 @@ int main() {
             pLine = fgets(line, 1024, in);
             printf("%s", pLine);
         }
-        finish = clock();
-        duration = (double)(finish - start) / CLOCKS_PER_SEC;
-        printf("\nrunning time : %fsecond(s) \n", duration);
+        gettimeofday(&end_time, NULL);
+        execution_time = (double)(end_time.tv_sec) + (double)(end_time.tv_usec) / 1000000.0 - (double)(start_time.tv_sec) - (double)(start_time.tv_usec) / 1000000.0;
+        printf("\nrunning time : %fsecond(s) \n", execution_time);
 
         fclose(in);
         return 0;
