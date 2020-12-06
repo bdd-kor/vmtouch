@@ -22,9 +22,9 @@ int main() {
     while (choice == 1 || 2 || 3) {
         printf("\n");
         if (choice == 1) {
-            gettimeofday(&start_time, NULL);
             printf("Enter the path to the file you want to test(example : c:\\test\\test.c) : ");
             scanf("%s", input);
+            gettimeofday(&start_time, NULL);
             FILE* in = fopen(input, "r");
             if (in == NULL) {
                 printf("ERROR!!! Please restart this program and enter the correct path.\n");
@@ -55,9 +55,10 @@ int main() {
             return 0;
         }
         else if (choice == 3) {
-            gettimeofday(&start_time, NULL);
+
             printf("Enter the path to the file you want to test(example : c:\\test\\test.c) : ");
             scanf("%s", input);
+            gettimeofday(&start_time, NULL);
             FILE* in = fopen(input, "r");
             if (in == NULL) {
                 printf("ERROR!!! Please restart this program and enter the correct path.\n");
