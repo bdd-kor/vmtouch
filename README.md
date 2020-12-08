@@ -16,7 +16,7 @@ vmtouch is a tool for learning about and controlling the file system cache of un
     $ make
     $ sudo make install
 
-### Quick install guide:
+### Test program guide:
 
     Enter ./test to start the test program.
     
