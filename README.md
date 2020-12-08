@@ -24,7 +24,8 @@ vmtouch is a tool for learning about and controlling the file system cache of un
     
     Test 1 tells you how long it takes to read the file line by line without printing the contents of the file.
     Test 2 prints the contents of the file.
-    Test 3 prints out the contents of the file, including the functions of 1 and 2, and tells you how long it takes to read the file line by line at the same time.
+    Test 3 prints out the contents of the file, including the functions of 1 and 2, 
+    and tells you how long it takes to read the file line by line at the same time.
 
 
 ### More information
